@@ -1,0 +1,162 @@
+<!-- Navbar -->
+<div class="navbar">
+    <img  class="logo" alt="Logo" src="../assets/images/TL-logo.png"/>
+    <div class="navbar-right">
+       <ul>
+         <li class="post-ad"><a> Post an Ad   </a></li>
+         <li><a> Buyer Enquiries</a></li>
+         <li><a> Support</a></li>
+         <li><a> Pricing</a></li>
+         <li class="user"><a> <i class="fa fa-user" aria-hidden="true"></i></a></li>
+       </ul>
+    </div>
+  </div>
+  <!-- NavBar end -->
+  
+  <!-- Banner Section -->
+  <div class="banner" >
+    <!-- <img  alt="Banner" src="../assets/images/banner-bg.png"/> -->
+    <div class="text" align="center">
+       <h2>Suyog Enterprises</h2>
+       <p><span><img src="../../assets/images/Vector.png" style="width: 32px"></span>Verified Supplier</p>
+    </div>
+  </div>
+  <!-- end -->
+  
+  <div class="content">
+    <div class="header-content">
+      <div class="items">Showing all products</div>
+      <div class="add-edit-actions">
+        <button class="addPoduct"  (click)="addProduct_openModal()"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Products</button>
+            </div>
+    </div>
+    
+    <!-- Product Section -->
+    <div class="products" *ngFor = "let product of Products ; let i=index">
+        <img src="{{product.image}}">
+        <div class="details">
+            <h4 style="display: inline-block;">{{product.productName.length > 60 ? product.productName.substring(0,60)+"..." : product.productName}} </h4>  <a style="display: inline-block;" class="remove-product" (click)="removeProductCall(i)">Remove Product</a>
+            <div class="product-info">
+               <div class="description">
+                 <ul>
+                  <li>Material :  {{product?.attributes.Material}}</li>
+                  <li>Color :  {{product?.attributes.Color}}</li>
+                  <li>Brand : {{product?.attributes.Brand}}</li>
+                 </ul>
+                 <div style="display: block;">
+                    <div class="block1">
+                      <p>{{product?.minOrders}}  Pieces (Min. order)</p> 
+                      <p class="location"> <i class="fa fa-map-marker" aria-hidden="true"></i> <span > {{product?.location}}</span></p>
+                    </div>
+                    
+                      <div class="block2">
+                        <p><i class="fa fa-truck" aria-hidden="true"></i> Usually {{product?.deliveryTime}}</p>
+                        <div class="ratings">
+                          <i class="fa fa-star-o" aria-hidden="true"></i>
+                          <i class="fa fa-star-o" aria-hidden="true"></i>
+                          <i class="fa fa-star-o" aria-hidden="true"></i>
+                          <i class="fa fa-star-o" aria-hidden="true"></i>
+                          <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </div>
+                        <p class="price" *ngIf="product?.productPrice != undefined"> 
+                          {{product?.productPrice|currency:"INR":"symbol"}} / piece
+                        </p>
+                        <div class="askprice"  *ngIf="product?.productPrice === undefined">
+                          <a  >Ask for price</a>
+                        </div>
+                        
+                    </div>
+                </div>
+               </div>
+  
+               <div class="actions">
+                  <a><i class="fa fa-heart-o" aria-hidden="true"></i> Add to favorites</a>
+                  <a><i class="fa fa-exchange" aria-hidden="true"></i> Add to Compare</a>
+                  <a><i class="fa fa-list-ul" aria-hidden="true"></i> Shortlist product</a>
+                  <a><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</a>
+                  <a><i class="fa fa-commenting" aria-hidden="true"></i> Contact seller</a>
+              </div>
+  
+            </div>
+        </div>
+    </div>
+    <!-- end -->
+  
+    <!--Pagination Section  -->
+    <div class=" p15">
+    <div class="float-right">
+      <div class="pagination " *ngFor="let each of pagesArray">
+        <a (click)="_onPageChange(each -1)">{{each}}</a>
+      </div>
+    </div>
+  </div>
+<!-- end -->
+</div>
+
+<!-- Footer Section -->
+<footer>
+   <div class="footer-section">
+    <p> ©All rights reserved Company name 2020 <a >Designed & Developer by <img src="../../assets/images/TL-logo.png" width="120"></a></p> 
+  </div>  
+</footer>
+<!-- end -->
+
+<!-- Add Product Section -->
+<ng-template #secondDialog>
+  <div id="modal-content-wrapper">
+    <div id = "boxes"> 
+          
+        <div id = "leftbox"> 
+            <div class="ImageUrl">
+                <input  class="input-url" type="text" placeholder="Enter Image Url"  [(ngModel)] ="addProductForm.image">
+            </div>
+        </div>  
+          
+
+          
+        <div id = "rightbox"> 
+            <div class="close-modal">
+                <i class="fa fa-times-circle-o " (click)="closeModal()" aria-hidden="true"></i>
+           </div>
+           <div class="add-edit-form">
+           <div  class="productname">
+             <input type="text" placeholder="Product name" [(ngModel)] ="addProductForm.productName">
+           </div>           
+            <div class="av">
+                <input type="text" placeholder="Attribute 1" [(ngModel)] ="attribute1">
+                <input type="text"  placeholder="value" [(ngModel)] ="attributevalue1">
+
+            </div>
+                
+                <div class="av">
+                    <input type="text"  placeholder="Attribute 2" [(ngModel)] ="attribute2">
+                    <input type="text"  placeholder="value" [(ngModel)] ="attributevalue2">
+        
+                </div>
+                
+                <div class="av">
+                    <input type="text"  placeholder="Attribute 3" [(ngModel)] ="attribute3">
+                    <input type="text"  placeholder="value" [(ngModel)] ="attributevalue3">
+
+                </div>
+                <div class="pl">
+                    <input type="text" placeholder="Pieces (Min order)" [(ngModel)] ="addProductForm.minOrders">
+                    <input type="text" placeholder="Location" [(ngModel)] ="addProductForm.location">
+                 </div>
+
+                 <div class="drp">
+                        <input type="text"  class="dr" placeholder="Delivery Time" [(ngModel)] ="addProductForm.deliveryTime">
+                        <input type="text" class="dr" placeholder="Rating" [(ngModel)] ="addProductForm.productRating">
+                        <div class="price">
+                            <span>₹</span><input type="text" placeholder="Price" [(ngModel)] ="addProductForm.productPrice">
+                </div>
+                        <div class="submit">
+                            <button  class="update-submit" (click)=" _addProductCall(addProductForm,attributevalue1,attributevalue2,attributevalue3,attribute1,attribute2,attribute3)">Update & Close </button>
+                        </div>
+                </div>
+            </div>        
+               
+        </div> 
+    </div> 
+</div>
+</ng-template>

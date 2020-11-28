@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,600;1,200;1,400&display=swap');
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Top Nav Bar CSS  */
+.navbar {
+  width: 1360px;
+  height: 42px;
+  margin: auto;
+  padding: 5px;
+  align-items: center;
+  background-color: #fff;
+}
+
+.navbar .logo {
+   width: 300px;
+   height: 42px;
+}
+.navbar-right{
+    float: right;
+}
+.navbar-right ul {
+    margin: -5px 0;
+    padding: 0%;
+}
+.navbar-right ul li {
+    display: inline-block;
+    padding: 7.2px 15px;
+    color: #5D636F;
+}
+
+.post-ad{
+    background: #FF6C00;
+    border-radius: 50px;
+    color: #fff !important;
+}
+
+.user {
+    font-size: 24px;
+}
+.content {
+   max-width: 920px;
+   margin: auto;
+   
+}
+
+/* Banner Css */
+.banner{
+    width: 100%;
+    background-image: url(../../assets/images/banner-bg.png);   
+}
+.banner img{
+    width: 100%;
+}
+.banner .text {
+    color: #fff;
+    padding: 32px;
+}
+
+.banner h2 {
+    text-transform: uppercase;
+    font-size: 28px;
+}
+.banner span  {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Product CSS */
+.items{
+    font-family: 'Overpass', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 15px;
+    color: #000000;
+}
+.products{
+    /* Width :960px; */
+    Height: 186px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    margin: 15px;
+}
+.products img {
+    float: left;
+    height: 186px;
+    width: 240px;
+    border-radius: 15px;
+    margin-right: 15px;
+}
+.description {
+    float: left;
+}
+.description ul {
+    padding:5px 0;
+    margin: 0;
+}
+.description li {
+    color: #5D636F;
+    list-style: none;
+    line-height: 24px;
+}
+.actions {
+    float: right;
+}
+.details {
+    padding: 5px;
+}
+
+.details h4{
+   margin: 0;
+   color: #5D636F;
+   font-weight: 500;
+}
+.block1 p, .block2 p{
+    margin: 10px 0;
+    color: #5D636F;
+}
+p.price {
+    color: #0E8543;
+    font-weight: 500;
+    font-size: 16px;
+}
+.block1{
+    float: left;
+    width: 236px;
+}
+.block2{
+    display: inline-block;
+    margin-top: -32px;
+}
+a.remove-product {
+    font-size: 13px;
+    font-weight: 400;
+    float: right;
+    color: red;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.location i {
+    font-size: 18px;
+}
+.location span {
+    font-size: 13px;
+}
+.actions a {
+    margin: 3.6px;
+    display: block;
+    border: 1px solid #0E8543;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: #0E8543;
+    padding: 3.2px 10px;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+}
+.askprice {
+    margin-top: 15px;
+}
+.askprice a {
+    border: 1px solid #0E8543;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: #0E8543;
+    padding: 3.2px 24px;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Pagination Css */
+.pagination {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .m15{
+    margin: 0 15px;
+  }
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+ 
+.p15{
+    padding: 15px;
+}
+  .float-right{
+      float: right;
+  }
+  .add-edit-actions button {
+    margin-right: 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.add-edit-actions {
+    float: right;
+    margin-top: -32px;
+    margin-right: 15px;
+}
+  /* Footer  Css */
+footer {
+    background: #EDF0F1;
+    padding: 7.2px;
+    margin-top: 32px;
+    color: #25333C;
+}
+
+.footer-section{
+    width: 1024px;
+    margin: auto;
+}
+.footer-section p {
+    margin: 0;
+}
+.footer-section a {
+    float: right;
+}
